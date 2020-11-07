@@ -1,0 +1,25 @@
+basePath: /
+host: localhost:8080
+info:
+  contact:
+    email: soberkoder@swagger.io
+    name: API Support
+  description: This is a sample serice for managing orders
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  termsOfService: http://swagger.io/terms/
+  title: imagen repository
+  version: "1.0"
+paths:
+  /documentacion-digital/repo/imagenes-base64/{name}:
+    get:
+      consumes:
+      - application/json
+      description: Get image base64
+      produces:
+      - application/json
+      summary: Get image base64
+      tags:
+      - api-repo-image
+swagger: "2.0"
