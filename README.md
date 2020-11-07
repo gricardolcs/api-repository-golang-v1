@@ -1,4 +1,12 @@
 # api-repository-golang-v1
 
-github.com/gricardolcs/api-repository-golang-v1
-swagger validate docs/swagger.yaml
+For run the application
+------------------------
+
+go run main.go
+
+ 
+
+
+
+ 

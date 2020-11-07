@@ -5,7 +5,7 @@ import (
 	"encoding/base64"
 	"encoding/json"
 	"github.com/gorilla/mux"
-	//"github.com/gricardolcs/api-repository-golang-v1/docs"
+	//"github.com/gricardolcs/api-repository-golang-v1/tree/main/docs"
 	httpSwagger "github.com/swaggo/http-swagger"
 	"io/ioutil"
 	"log"
