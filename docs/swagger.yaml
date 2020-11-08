@@ -12,14 +12,14 @@ info:
   title: imagen repository
   version: "1.0"
 paths:
-  /documentacion-digital/repo/imagenes-base64/{name}:
+  /hello/{userName}:
     get:
       consumes:
       - application/json
-      description: Get image base64
+      description: Get user name
       produces:
       - application/json
-      summary: Get image base64
+      summary: Get user name
       tags:
       - api-repo-image
 swagger: "2.0"

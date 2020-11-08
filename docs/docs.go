@@ -32,9 +32,9 @@ var doc = `{
     "host": "{{.Host}}",
     "basePath": "{{.BasePath}}",
     "paths": {
-        "/documentacion-digital/repo/imagenes-base64/{name}": {
+        "/hello/{userName}": {
             "get": {
-                "description": "Get image base64",
+                "description": "Get user name",
                 "consumes": [
                     "application/json"
                 ],
@@ -44,7 +44,7 @@ var doc = `{
                 "tags": [
                     "api-repo-image"
                 ],
-                "summary": "Get image base64"
+                "summary": "Get user name"
             }
         }
     }

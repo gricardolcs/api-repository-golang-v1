@@ -1,16 +1,12 @@
 package main
 
 import (
-	"bufio"
-	"encoding/base64"
 	"encoding/json"
 	"github.com/gorilla/mux"
-	//"github.com/gricardolcs/api-repository-golang-v1/tree/main/docs"
 	httpSwagger "github.com/swaggo/http-swagger"
-	"io/ioutil"
+	_ "github.com/swaggo/swag/example/basic/docs"
 	"log"
 	"net/http"
-	"os"
 )
 
 type ImageStruct struct {
@@ -19,6 +15,10 @@ type ImageStruct struct {
 	//OrderedAt    time.Time `json:"orderedAt" example:"2019-11-09T21:21:46+00:00"`
 	//Items        []Item    `json:"items"`
 	ImageName string `json:"imageName" example:"test.png"`
+}
+
+type User struct {
+	userName string `json:"userName" example:"hello"`
 }
 
 // @title imagen repository
@@ -33,13 +33,28 @@ type ImageStruct struct {
 // @BasePath /
 func main() {
 	router := mux.NewRouter()
-	router.HandleFunc("/documentacion-digital/repo/imagenes-base64/{name}", getDocumentBase64).Methods("GET")
+	//router.HandleFunc("/documentacion-digital/repo/imagenes-base64/{name}", getDocumentBase64).Methods("GET")
+	router.HandleFunc("/hello/{user}", getUser).Methods("GET")
 
 	// Swagger
 	router.PathPrefix("/swagger").Handler(httpSwagger.WrapHandler)
 	log.Fatal(http.ListenAndServe(":8080", router))
 }
 
+// GetUser godoc
+// @Summary Get user name
+// @Description Get user name
+// @Tags api-repo-image
+// @Accept  json
+// @Produce  json
+// 200 {string} User
+// @Router /hello/{userName} [get]
+func getUser(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Content-Type", "application/json")
+	json.NewEncoder(w).Encode("Hello")
+}
+
+/*
 // GetDocumentBase64 godoc
 // @Summary Get image base64
 // @Description Get image base64
@@ -63,3 +78,5 @@ func getDocumentBase64(w http.ResponseWriter, r *http.Request) {
 	encoded := base64.StdEncoding.EncodeToString(content)
 	json.NewEncoder(w).Encode(encoded)
 }
+
+*/
