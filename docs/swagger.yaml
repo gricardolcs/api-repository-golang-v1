@@ -4,7 +4,7 @@ info:
   contact:
     email: soberkoder@swagger.io
     name: API Support
-  description: This is a sample serice for managing orders
+  description: Retriving from imagen repository
   license:
     name: Apache 2.0
     url: http://www.apache.org/licenses/LICENSE-2.0.html
@@ -12,14 +12,24 @@ info:
   title: imagen repository
   version: "1.0"
 paths:
-  /hello/{userName}:
+  /documentacion-digital/repo/imagenes-base64/{imageName}:
     get:
       consumes:
       - application/json
-      description: Get user name
+      description: Get image base64
       produces:
       - application/json
-      summary: Get user name
+      summary: Get image base64
+      tags:
+      - api-repo-image
+  /documentacion-digital/repo/imagenes/{imageName}:
+    get:
+      consumes:
+      - application/json
+      description: Get image
+      produces:
+      - application/json
+      summary: Get image
       tags:
       - api-repo-image
 swagger: "2.0"

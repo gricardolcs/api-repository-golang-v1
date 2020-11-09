@@ -32,9 +32,9 @@ var doc = `{
     "host": "{{.Host}}",
     "basePath": "{{.BasePath}}",
     "paths": {
-        "/hello/{userName}": {
+        "/documentacion-digital/repo/imagenes-base64/{imageName}": {
             "get": {
-                "description": "Get user name",
+                "description": "Get image base64",
                 "consumes": [
                     "application/json"
                 ],
@@ -44,7 +44,22 @@ var doc = `{
                 "tags": [
                     "api-repo-image"
                 ],
-                "summary": "Get user name"
+                "summary": "Get image base64"
+            }
+        },
+        "/documentacion-digital/repo/imagenes/{imageName}": {
+            "get": {
+                "description": "Get image",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "api-repo-image"
+                ],
+                "summary": "Get image"
             }
         }
     }
@@ -66,7 +81,7 @@ var SwaggerInfo = swaggerInfo{
 	BasePath:    "/",
 	Schemes:     []string{},
 	Title:       "imagen repository",
-	Description: "This is a sample serice for managing orders",
+	Description: "Retriving from imagen repository",
 }
 
 type s struct{}

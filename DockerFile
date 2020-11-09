@@ -2,8 +2,6 @@ FROM golang:latest
 WORKDIR /app
 COPY go.mod go.sum ./
 RUN go mod download
-VOLUME /imagenes
-#ADD . /imagenes/
 ADD . .
 COPY . .
 RUN go build -o main .
